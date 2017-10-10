@@ -59,7 +59,7 @@ if(isset($_POST['confirm']))
 	$_SESSION['payTo'] = $payTo;
 	
 	//insert into DB
-	$queryOrder = "INSERT INTO orders (orderid, time, name, address, address2, city, state, zip, country, email, cost, payto, items, paid, complete) VALUES ('$orderID', '$time', '$name', '$address', '$address2', '$city', '$state', '$zip', '$country', '$email', '$orderCost', '$payTo', '$orderData', '$paid', '$complete')";
+	$queryOrder = "INSERT INTO orders (recd,orderid, time, name, address, address2, city, state, zip, country, email, cost, payto, items, paid, complete) VALUES (15200000,'$orderID', '$time', '$name', '$address', '$address2', '$city', '$state', '$zip', '$country', '$email', '$orderCost', '$payTo', '$orderData', '$paid', '$complete')";
 	$doOrder = mysqli_query($conn, $queryOrder) or die(mysqli_error($conn));
 	if(!$doOrder)
 			{
